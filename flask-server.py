@@ -5,7 +5,7 @@ from telebot import TeleBot
 import os
 import json
 from datetime import datetime
-from dotenv import load_dotenv
+
 
 app = Flask(__name__, static_folder='public')
 
@@ -76,9 +76,7 @@ def add_user_event():
     
     return jsonify({"message": "Event added"}), 201
 
-def run_bot():
-    bot.remove_webhook()
-    bot.polling()
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
