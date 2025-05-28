@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Таймер Событий</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Таймер событий</h1>
+  </header>
+
+  <main id="content">
+    <section id="will-be" class="page">
+      <h2>Предстоящие события</h2>
+      <div id="upcoming-events" class="event-list"></div>
+    </section>
+
+    <section id="was" class="page hidden">
+      <h2>Прошедшие события</h2>
+      <div id="past-events" class="event-list"></div>
+    </section>
+
+    <section id="birthdays" class="page hidden">
+      <h2>Дни рождения</h2>
+      <div id="birthday-events" class="event-list"></div>
+    </section>
+
+    <section id="user-events" class="page hidden">
+      <h2>Мои события</h2>
+      <div id="user-events-list" class="event-list"></div>
+
+      <form id="event-form" class="event-form">
+        <input type="text" id="title" placeholder="Название события" required>
+        <input type="date" id="date" required>
+        <select id="display" required>
+          <option value="default">По умолчанию (Мои события)</option>
+          <option value="hidden">Скрыто (только в день события)</option>
+          <option value="birthday">Дни рождения</option>
+        </select>
+        <button type="submit">➕ Добавить событие</button>
+      </form>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button data-page="will-be" class="nav-btn active">Будет</button>
+    <button data-page="was" class="nav-btn">Было</button>
+    <button data-page="birthdays" class="nav-btn">ДР</button>
+    <button data-page="user-events" class="nav-btn">Мои</button>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
