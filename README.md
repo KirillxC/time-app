@@ -1,6 +1,6 @@
 # time-app
 
-<a href="#" onclick="window.open('', '_blank', 'width=600,height=400').document.write('<h3>WorldOpenCode</h3><a href=\'https://github.com/KirillxC\'>GitHub</a><br><a href=\'http://z95062qz.beget.tech/\'>Портфолио</a><br><a href=\'https://t.me/WorldOpenCode\'>Telegram</a>'); return false;">WorldOpenCode</a>
+<a href="#" onclick="window.open('', '_blank', 'width=600,height=400').document.write('<h3>WorldOpenCode</h3><br><a href=\'http://z95062qz.beget.tech/\'>Портфолио</a><br><a href=\'https://t.me/WorldOpenCode\'>Telegram</a>'); return false;">WorldOpenCode</a>
 
 Развернутое приложение 
   на сайте: https://time-app-nu.vercel.app/
