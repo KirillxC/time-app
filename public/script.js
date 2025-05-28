@@ -10,11 +10,9 @@ function formatTimeDiff(date, isPast) {
   const now = new Date();
   let target;
 
-  // Если мы считаем до начала лета, то фиксируем 1 июня в 00:00
   if (date === "summerStart") {
-      target = new Date(now.getFullYear(), 5, 1, 0, 0, 0); // 1 июня в 00:00 текущего года
-  } else {
-      target = new Date(date); // Для других событий — обычная дата
+      target = new Date(now.getFullYear(), 5, 1, 0, 0, 0); 
+      target = new Date(date); 
   }
 
   let diffMs = isPast ? now - target : target - now;
@@ -24,7 +22,6 @@ function formatTimeDiff(date, isPast) {
   const oneMinute = 1000 * 60;
   const oneSecond = 1000;
 
-  // Если разница меньше года (до лета)
   if (diffMs < oneDay * 365) {
       const days = Math.floor(diffMs / oneDay);
       diffMs -= days * oneDay;
@@ -40,7 +37,7 @@ function formatTimeDiff(date, isPast) {
       return (isPast ? `Прошло: ` : `Осталось: `) +
           `${days} д. ${hours} ч. ${minutes} мин. ${seconds} сек.`;
   } else {
-      // Если разница больше года
+
       const years = Math.floor(diffMs / (oneDay * 365));
       diffMs -= years * (oneDay * 365);
 
@@ -105,7 +102,7 @@ async function renderEvents() {
                       eventDate.getMonth() === today.getMonth() &&
                       eventDate.getDate() === today.getDate();
       const card = createEventCard(event, isPast);
-      const display = event.display || 'default'; // Значение по умолчанию, если display отсутствует
+      const display = event.display || 'default'; 
 
       if (display === 'birthday') {
           birthdays.appendChild(card);
@@ -151,16 +148,14 @@ document.querySelectorAll('.nav-btn').forEach(btn => {
 
 renderEvents();
 showPage('will-be');
-// Добавляем в конец файла
 
-// Модальное окно WorldOpenCode
 const worldOpenCodeBtn = document.getElementById('worldopencode-btn');
 const modalOverlay = document.getElementById('modal-overlay');
 const closeModalBtn = document.getElementById('close-modal');
 
 worldOpenCodeBtn.addEventListener('click', () => {
   modalOverlay.classList.add('active');
-  document.body.style.overflow = 'hidden'; // Блокируем скролл
+  document.body.style.overflow = 'hidden'; 
 });
 
 closeModalBtn.addEventListener('click', () => {
@@ -168,7 +163,6 @@ closeModalBtn.addEventListener('click', () => {
   document.body.style.overflow = '';
 });
 
-// Закрытие по клику вне модалки
 modalOverlay.addEventListener('click', (e) => {
   if (e.target === modalOverlay) {
     modalOverlay.classList.remove('active');
@@ -176,7 +170,5 @@ modalOverlay.addEventListener('click', (e) => {
   }
 });
 
-// Анимация при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
-  // Уже есть анимация через CSS, но можно добавить дополнительную логику
 });
