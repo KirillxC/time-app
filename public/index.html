@@ -9,8 +9,9 @@
 <body>
   <header>
     <h1>Таймер событий</h1>
+    <button id="worldopencode-btn" class="worldopencode-btn">WorldOpenCode</button>
   </header>
-
+  
   <main id="content">
     <section id="will-be" class="page">
       <h2>Предстоящие события</h2>
@@ -50,6 +51,19 @@
     <button data-page="birthdays" class="nav-btn">ДР</button>
     <button data-page="user-events" class="nav-btn">Мои</button>
   </nav>
+
+  
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div class="modal-content">
+      <h3>WorldOpenCode</h3>
+      <div class="modal-links">
+        <a href="https://github.com/KirillxC" target="_blank">GitHub</a>
+        <a href="http://z95062qz.beget.tech/" target="_blank">Портфолио</a>
+        <a href="https://t.me/WorldOpenCode" target="_blank">Telegram</a>
+      </div>
+      <button id="close-modal" class="modal-close-btn">Закрыть</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
