@@ -151,3 +151,32 @@ document.querySelectorAll('.nav-btn').forEach(btn => {
 
 renderEvents();
 showPage('will-be');
+// Добавляем в конец файла
+
+// Модальное окно WorldOpenCode
+const worldOpenCodeBtn = document.getElementById('worldopencode-btn');
+const modalOverlay = document.getElementById('modal-overlay');
+const closeModalBtn = document.getElementById('close-modal');
+
+worldOpenCodeBtn.addEventListener('click', () => {
+  modalOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden'; // Блокируем скролл
+});
+
+closeModalBtn.addEventListener('click', () => {
+  modalOverlay.classList.remove('active');
+  document.body.style.overflow = '';
+});
+
+// Закрытие по клику вне модалки
+modalOverlay.addEventListener('click', (e) => {
+  if (e.target === modalOverlay) {
+    modalOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+});
+
+// Анимация при загрузке страницы
+document.addEventListener('DOMContentLoaded', () => {
+  // Уже есть анимация через CSS, но можно добавить дополнительную логику
+});
