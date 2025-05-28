@@ -1,12 +1,31 @@
+from threading import Thread
 from flask import Flask, request, jsonify, send_from_directory
-import json
+import telebot
 import os
+import json
+from datetime import datetime
+from dotenv import load_dotenv
 
 app = Flask(__name__, static_folder='public')
+bot = telebot.TeleBot(os.getenv('TOKEN')) 
 
-EVENTS_PATH = 'server/events.json'
-USER_EVENTS_PATH = 'database/db.json'
+EVENTS_FILE = 'server/events.json'
+USER_EVENTS_FILE = 'database/db.json'
+WEB_APP_URL = "https://time-app-nu.vercel.app"  
 
+@bot.message_handler(commands=['start'])
+def send_welcome(message):
+    markup = telebot.types.InlineKeyboardMarkup()
+    btn = telebot.types.InlineKeyboardButton(
+        text="Открыть Таймер Событий", 
+        url=WEB_APP_URL
+    )
+    markup.add(btn)
+    
+    bot.send_message(
+        message.chat.id,
+        reply_markup=markup
+    )
 @app.route('/')
 def index():
     return send_from_directory(app.static_folder, 'index.html')
@@ -54,5 +73,10 @@ def add_user_event():
     
     return jsonify({"message": "Event added"}), 201
 
+def run_bot():
+    bot.remove_webhook()
+    bot.polling()
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)  
+    Thread(target=run_bot).start()  
+    app.run(host='0.0.0.0', port=5000)
