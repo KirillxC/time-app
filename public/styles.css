@@ -1,13 +1,11 @@
-/* Базовые стили */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, sans-serif;
-  background: #0a0a0a; /* ЕЩЁ темнее фон */
+  background: #0a0a0a; 
   color: #e0e0e0;
   padding-bottom: 100px;
 }
 
-/* Стили для селекта */
 .event-form select {
   padding: 12px;
   font-size: 16px;
@@ -16,7 +14,7 @@ body {
   background: #1e1e1e;
   color: #e0e0e0;
   outline: none;
-  appearance: none; /* Убираем стандартную стрелку */
+  appearance: none; 
   background-image: url('data:image/svg+xml;utf8,<svg fill="%23666" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
   background-repeat: no-repeat;
   background-position: right 12px center;
@@ -40,14 +38,12 @@ h2 {
   margin-top: 20px;
 }
 
-/* Список событий */
 .event-list {
   max-width: 600px;
   margin: 20px auto;
   padding: 0 10px;
 }
 
-/* Анимация для карточек */
 @keyframes fadeInUp {
   from {
       opacity: 0;
@@ -59,7 +55,6 @@ h2 {
   }
 }
 
-/* Карточки событий */
 .event {
   background: #1b1b1b;
   border-radius: 16px;
@@ -67,7 +62,7 @@ h2 {
   margin-bottom: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   animation: fadeInUp 0.6s ease forwards;
-  opacity: 0; /* будет fade in через анимацию */
+  opacity: 0; 
 }
 
 .event h3 {
@@ -75,7 +70,6 @@ h2 {
   font-size: 20px;
 }
 
-/* Навигация внизу */
 .bottom-nav {
   position: fixed;
   bottom: 20px;
@@ -83,22 +77,22 @@ h2 {
   background: none;
   display: flex;
   justify-content: center;
-  gap: 10px; /* отступ между кнопками */
+  gap: 10px;
 }
 
 .bottom-nav button {
   background: #1f1f1f;
   border: 1px solid #333;
-  padding: 14px 20px; /* Увеличена высота */
+  padding: 14px 20px;
   font-size: 16px;
   border-radius: 12px;
   color: #888;
   cursor: pointer;
   transition: background 0.3s, color 0.3s;
   text-align: center;
-  min-width: 0; /* Предотвращает переполнение */
-  box-sizing: border-box; /* Учитывает границы и отступы в ширине */
-  white-space: nowrap; /* Предотвращает перенос текста */
+  min-width: 0; 
+  box-sizing: border-box; 
+  white-space: nowrap; 
 }
 
 .bottom-nav button:hover {
@@ -111,7 +105,6 @@ h2 {
   color: #ffffff;
 }
 
-/* Форма добавления события */
 .event-form {
   margin-top: 20px;
   display: flex;
@@ -145,7 +138,6 @@ h2 {
   background: #3a3a3a;
 }
 
-/* Страницы */
 .page {
   display: none;
 }
@@ -153,43 +145,160 @@ h2 {
   display: block;
 }
 
-/* Медиа-запрос для мобильных устройств */
 @media (max-width: 600px) {
   .bottom-nav {
-      gap: 3px; /* Ещё меньший отступ */
-      padding: 0 5px; /* Меньшие боковые отступы */
+      gap: 3px; 
+      padding: 0 5px; 
   }
 
   .bottom-nav button {
-      padding: 12px 28px; /* Увеличена высота, уменьшена ширина */
-      font-size: 15px; /* Меньший шрифт */
+      padding: 12px 28px;
+      font-size: 15px;
   }
 
   header {
-      font-size: 20px; /* Уменьшаем заголовок */
+      font-size: 20px; 
       padding: 15px;
   }
 
   h2 {
-      font-size: 20px; /* Уменьшаем подзаголовки */
+      font-size: 20px; 
   }
 
   .event-form input,
   .event-form select,
   .event-form button {
-      font-size: 16px; /* Меньший шрифт для формы */
+      font-size: 16px;
       padding: 10px;
   }
 }
 
-/* Медиа-запрос для очень узких экранов */
 @media (max-width: 360px) {
   .bottom-nav button {
-      padding: 7px 4px; /* Увеличена высота, ещё меньше ширина */
-      font-size: 10px; /* Минимальный шрифт */
+      padding: 7px 4px; 
+      font-size: 10px; 
   }
 
   .bottom-nav {
-      gap: 4px; /* Минимальный отступ */
+      gap: 4px; 
   }
+}
+
+.worldopencode-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(30, 30, 30, 0.7);
+  color: #888;
+  border: 1px solid #333;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  z-index: 100;
+}
+
+.worldopencode-btn:hover {
+  background: rgba(60, 60, 60, 0.9);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-out;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: #1e1e1e;
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 400px;
+  transform: translateY(20px);
+  transition: transform 0.3s ease-out;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.modal-overlay.active .modal-content {
+  transform: translateY(0);
+}
+
+.modal-content h3 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.modal-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal-links a {
+  color: #4dabf7;
+  text-decoration: none;
+  text-align: center;
+  padding: 12px;
+  background: rgba(77, 171, 247, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.modal-links a:hover {
+  background: rgba(77, 171, 247, 0.2);
+  transform: translateX(5px);
+}
+
+.modal-close-btn {
+  display: block;
+  margin: 25px auto 0;
+  padding: 10px 25px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modal-close-btn:hover {
+  background: #444;
+  transform: scale(1.05);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.worldopencode-btn {
+  animation: slideIn 0.5s ease-out 0.3s both;
 }
