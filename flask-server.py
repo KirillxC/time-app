@@ -6,8 +6,9 @@ import json
 from datetime import datetime
 from dotenv import load_dotenv
 
+load_dotenv()
 app = Flask(__name__, static_folder='public')
-bot = telebot.TeleBot(os.getenv('TOKEN')) 
+bot = telebot.TeleBot(os.getenv('TELEGRAM_TOKEN'))
 
 EVENTS_FILE = 'server/events.json'
 USER_EVENTS_FILE = 'database/db.json'
