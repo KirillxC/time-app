@@ -1,14 +1,16 @@
 from threading import Thread
 from flask import Flask, request, jsonify, send_from_directory
 import telebot
+from telebot import TeleBot
 import os
 import json
 from datetime import datetime
 from dotenv import load_dotenv
 
-load_dotenv()
 app = Flask(__name__, static_folder='public')
-bot = telebot.TeleBot(os.getenv('TELEGRAM_TOKEN'))
+
+token = os.environ.get("TOKEN") 
+bot = TeleBot(token)
 
 EVENTS_FILE = 'server/events.json'
 USER_EVENTS_FILE = 'database/db.json'
