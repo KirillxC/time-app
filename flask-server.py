@@ -81,5 +81,4 @@ def run_bot():
     bot.polling()
 
 if __name__ == '__main__':
-    Thread(target=run_bot).start()  
     app.run(host='0.0.0.0', port=5000)
