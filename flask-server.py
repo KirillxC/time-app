@@ -15,7 +15,7 @@ bot = TeleBot("token")
 
 EVENTS_PATH = os.path.join(os.path.dirname(__file__), 'server/events.json')
 USER_EVENTS_PATH = os.path.join(os.path.dirname(__file__), 'database/db.json')
-WEB_APP_URL = "https://q1js5sx4-5000.euw.devtunnels.ms/"  
+WEB_APP_URL = "https://time-app-nu.vercel.app/"  
 
 os.makedirs(os.path.dirname(EVENTS_PATH), exist_ok=True)
 os.makedirs(os.path.dirname(USER_EVENTS_PATH), exist_ok=True)
